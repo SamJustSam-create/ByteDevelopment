@@ -91,9 +91,6 @@ button { font: inherit; cursor: pointer; border: 0; background: none; color: inh
   height: 52px;
   object-fit: contain;
   flex-shrink: 0;
-  filter: invert(1);
-  mix-blend-mode: lighten;
-  margin: -8px -6px;
   transition: transform 0.25s ease;
 }
 .brand:hover .brand-mark { transform: rotate(-3deg) scale(1.04); }
