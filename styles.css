@@ -131,6 +131,60 @@ button { font: inherit; cursor: pointer; border: 0; background: none; color: inh
   transition: transform 0.2s ease, opacity 0.2s ease;
 }
 
+/* ---------- Site notice ---------- */
+.site-notice {
+  background: rgba(251, 191, 36, 0.07);
+  border-bottom: 1px solid rgba(251, 191, 36, 0.22);
+}
+[data-notice-dismissed] .site-notice { display: none; }
+.site-notice-inner {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  padding: 0.7rem 0;
+  font-size: 0.88rem;
+  line-height: 1.5;
+  color: var(--muted);
+}
+.site-notice-inner p {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+.site-notice-icon {
+  flex-shrink: 0;
+  width: 18px;
+  height: 18px;
+  margin-top: 0.15em;
+  color: #fcd34d;
+}
+.site-notice strong {
+  color: #fcd34d;
+  font-weight: 600;
+}
+.site-notice a {
+  color: #fcd34d;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.site-notice a:hover { color: #fde68a; }
+.site-notice-dismiss {
+  flex-shrink: 0;
+  margin-left: auto;
+  display: grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 8px;
+  color: var(--muted);
+  transition: color 0.2s ease, background 0.2s ease;
+}
+.site-notice-dismiss:hover {
+  color: var(--text);
+  background: rgba(251, 191, 36, 0.12);
+}
+.site-notice-dismiss svg { width: 14px; height: 14px; }
+main:focus { outline: none; } /* focus target after dismissing the notice */
+
 /* ---------- Buttons ---------- */
 .btn {
   display: inline-flex;

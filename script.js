@@ -1,6 +1,29 @@
 // ---------- Footer year ----------
 document.querySelector('[data-year]').textContent = new Date().getFullYear();
 
+// ---------- Dismissible site notice ----------
+(() => {
+  const notice = document.querySelector('.site-notice');
+  if (!notice) return;
+  const key = 'notice-dismissed:' + (notice.dataset.notice || 'default');
+  try {
+    if (localStorage.getItem(key)) {
+      notice.remove();
+      return;
+    }
+  } catch {}
+  notice.querySelector('.site-notice-dismiss')?.addEventListener('click', () => {
+    notice.remove();
+    try { localStorage.setItem(key, '1'); } catch {}
+    // Removing the focused button would reset focus to <body>; keep keyboard users in place.
+    const main = document.querySelector('main');
+    if (main) {
+      main.setAttribute('tabindex', '-1');
+      main.focus({ preventScroll: true });
+    }
+  });
+})();
+
 // ---------- Scroll progress bar ----------
 (() => {
   const bar = document.querySelector('.scroll-progress');
