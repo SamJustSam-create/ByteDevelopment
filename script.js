@@ -296,7 +296,7 @@ form?.addEventListener('submit', async (e) => {
     });
     if (res.ok) {
       form.reset();
-      note.textContent = 'Thanks — I\'ll reply within a business day.';
+      note.textContent = 'Thanks - I\'ll reply within a business day.';
       note.className = 'form-note success';
     } else {
       throw new Error('Bad response');
