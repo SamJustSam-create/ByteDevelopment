@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 4%;
+    --foreground: 0 0% 90%;
+    --card: 0 0% 8%;
+    --card-foreground: 0 0% 90%;
+    --popover: 0 0% 8%;
+    --popover-foreground: 0 0% 90%;
+    --primary: 72 100% 50%;
+    --primary-foreground: 0 0% 4%;
+    --secondary: 0 0% 12%;
+    --secondary-foreground: 0 0% 90%;
+    --muted: 0 0% 12%;
+    --muted-foreground: 0 0% 64%;
+    --accent: 0 0% 12%;
+    --accent-foreground: 0 0% 90%;
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 18%;
+    --input: 0 0% 18%;
+    --ring: 72 100% 50%;
+    --chart-1: 72 100% 50%;
+    --chart-2: 173 58% 45%;
+    --chart-3: 197 37% 60%;
+    --chart-4: 43 74% 66%;
+    --chart-5: 27 87% 67%;
+    --radius: 2px;
+    --font-heading: "Inter Tight", ui-sans-serif, system-ui, sans-serif;
+    --font-body: "Inter Tight", ui-sans-serif, system-ui, sans-serif;
+    --font-display: "Inter Tight", ui-sans-serif, system-ui, sans-serif;
+    --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+    --sidebar-background: 0 0% 6%;
+    --sidebar-foreground: 0 0% 90%;
+    --sidebar-primary: 72 100% 50%;
+    --sidebar-primary-foreground: 0 0% 4%;
+    --sidebar-accent: 0 0% 12%;
+    --sidebar-accent-foreground: 0 0% 90%;
+    --sidebar-border: 0 0% 18%;
+    --sidebar-ring: 72 100% 50%;
+  }
+
+  .dark {
+    --background: 0 0% 4%;
+    --foreground: 0 0% 90%;
+    --card: 0 0% 8%;
+    --card-foreground: 0 0% 90%;
+    --popover: 0 0% 8%;
+    --popover-foreground: 0 0% 90%;
+    --primary: 72 100% 50%;
+    --primary-foreground: 0 0% 4%;
+    --secondary: 0 0% 12%;
+    --secondary-foreground: 0 0% 90%;
+    --muted: 0 0% 12%;
+    --muted-foreground: 0 0% 64%;
+    --accent: 0 0% 12%;
+    --accent-foreground: 0 0% 90%;
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 18%;
+    --input: 0 0% 18%;
+    --ring: 72 100% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    @apply bg-background text-foreground font-body antialiased;
+  }
+
+  section[id] {
+    scroll-margin-top: 4.5rem;
+  }
+
+  ::selection {
+    background: hsl(var(--primary));
+    color: hsl(var(--primary-foreground));
+  }
+
+  :focus-visible {
+    outline: 2px solid hsl(var(--primary));
+    outline-offset: 2px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+@layer utilities {
+  .blueprint-grid {
+    background-image: linear-gradient(to right, hsl(var(--border) / 0.55) 1px, transparent 1px);
+    background-size: 16.6667% 100%;
+  }
+
+  @media (max-width: 767px) {
+    .blueprint-grid {
+      background-size: 50% 100%;
+    }
+  }
+}
